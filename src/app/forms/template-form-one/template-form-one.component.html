@@ -1,0 +1,183 @@
+<div class="row">
+    <!-- Register Form 1 -->
+    <div class="col">
+        <div class="card p-4 shadow-lg cnt">
+            <h3 class="text-center mb-3">Register 1</h3>
+            <form #registerForm1="ngForm" (ngSubmit)="onSubmitRegisterForm1(registerForm1)">
+                <div class="mb-3">
+                    <label for="name" class="form-label h6">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" placeholder="Enter your name" ngModel
+                        required #fullName="ngModel">
+                </div>
+                
+                <!-- This will show the error when submited without input -->
+                <div *ngIf="fullName.invalid && registerForm1.submitted" class="text-danger">
+                    <div>Name is required</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label h6">Email address</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter your email" ngModel
+                        required #email="ngModel" autocomplete="off">
+                </div>
+                <!-- Email Address Validation -->
+                <div *ngIf="email.errors && registerForm1.submitted" class="text-danger">
+                    <div>Email is required</div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="password" class="form-label h6">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Enter password" ngModel
+                        required #password="ngModel">
+                </div>
+                <!-- Passowrd Validation -->
+                <div *ngIf="password.errors && registerForm1.submitted">
+                    <small class="text-danger">Password is Required</small>
+                </div>
+
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Form 2 -->
+    <div class="col">
+        <div class="card p-4 shadow-lg cnt">
+            <h3 class="text-center mb-3">Register 2</h3>
+            <form #registerForm2="ngForm" (ngSubmit)="onSubmitRegisterForm2(registerForm2)">
+                <div class="mb-3">
+                    <label for="name" class="form-label h6">Full Name</label>
+                    <input type="text" class="form-control" name="fullNamef2" placeholder="Enter your name" ngModel
+                        required #fullNamef2="ngModel">
+                </div>
+                <!-- Full Name Validation -->
+                <div *ngIf="fullNamef2.invalid && fullNamef2.touched">
+                    <small class="text-danger">First Name is Required</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label h6">Email address</label>
+                    <input type="email" class="form-control" name="emailf2" placeholder="Enter your email" ngModel
+                        required #emailf2="ngModel" autocomplete="off">
+                </div>
+                <!-- Email Address Validation -->
+                <div *ngIf="emailf2.invalid && emailf2.touched">
+                    <small class="text-danger">Email Address is Required</small>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label h6">Password</label>
+                    <input type="password" class="form-control" name="passwordf2" placeholder="Enter password" ngModel
+                        required #passwordf2="ngModel">
+                </div>
+                <!-- Passowrd Validation -->
+                <div *ngIf="passwordf2.invalid && passwordf2.touched">
+                    <small class="text-danger">Password is Required</small>
+                </div>
+                <!-- Usimg Disable Button -->
+                <div class="d-grid">
+                    <button type="submit" [disabled]="registerForm2.invalid" class="btn btn-success">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Register Form 3 -->
+    <div class="col">
+        <div class="card p-4 shadow-lg cnt">
+            <h3 class="text-center mb-3">Register 3</h3>
+            <form #registerForm3="ngForm" (ngSubmit)="onSubmitRegisterForm3(registerForm3)">
+                <div class="mb-3">
+                    <label for="name" class="form-label h6">Full Name</label>
+                    <input type="text" class="form-control" name="fullNamef3" placeholder="Enter your name" ngModel
+                        required #fullNamef3="ngModel">
+                </div>
+                <!-- Full Name Validation -->
+                <div *ngIf="fullNamef3.invalid && fullNamef3.touched">
+                    <small class="text-danger">First Name is Required</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label h6">Email address</label>
+                    <input type="email" class="form-control" name="emailf3" placeholder="Enter your email" ngModel
+                        required #emailf3="ngModel" autocomplete="off">
+                </div>
+                <!-- Email Address Validation -->
+                <div *ngIf="emailf3.invalid && emailf3.touched">
+                    <small class="text-danger">Email Address is Required</small>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label h6">Password</label>
+                    <input type="password" class="form-control" name="passwordf3" placeholder="Enter password" ngModel
+                        required #passwordf3="ngModel">
+                </div>
+                <!-- Passowrd Validation -->
+                <div *ngIf="passwordf3.invalid && passwordf3.touched">
+                    <small class="text-danger">Password is Required</small>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+
+                <div class="d-grid mt-4">
+
+                    <h2 class="btn btn-warning" (click)="resetUsinChild()">Reset</h2>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- With Some more Validation -->
+    <!-- Register Form 4 -->
+    <div class="col">
+        <div class="card p-4 shadow-lg cnt">
+            <h3 class="text-center mb-3">Register 4</h3>
+            <form #registerForm4="ngForm" (ngSubmit)="onSubmitRegisterForm4(registerForm4)">
+                <div class="mb-3">
+                    <label for="name" class="form-label h6">Full Name</label>
+                    <input type="text" class="form-control" name="fullName" placeholder="Enter your name" ngModel
+                        required #fullNamef4="ngModel">
+                </div>
+                <!-- Full Name Validation -->
+                <div *ngIf="fullNamef4.invalid && fullNamef4.touched">
+                    <small class="text-danger">First Name is Required</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label h6">Email address</label>
+                    <input type="email" class="form-control" name="emailf4" placeholder="Enter your email" ngModel
+                        required #emailf4="ngModel" autocomplete="off">
+                </div>
+                <!-- Email Address Validation -->
+                <div *ngIf="emailf4.invalid && emailf4.touched">
+                    <small class="text-danger">Email Address is Required</small>
+                </div>
+
+
+
+                <div class="mb-3">
+                    <label for="password" class="form-label h6">Password</label>
+                    <input type="password" class="form-control" name="passwordf4" placeholder="Enter password" ngModel
+                        required #passwordf4="ngModel">
+                </div>
+                <!-- Passowrd Validation -->
+                <div *ngIf="passwordf4.invalid && passwordf4.touched">
+                    <small class="text-danger">Password is Required</small>
+                </div>
+
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
